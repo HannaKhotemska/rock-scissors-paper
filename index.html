@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>GAME</h2>
+<button onclick="game()">START GAME</button>
+
+<script>
+// Game
+function game () {
+do {
+    const human = prompt("paper, rock, scissors, what do you choose?", '').toLowerCase();
+    function randomElement() {
+        const game = {
+            1: "rock",
+            2: "paper",
+            3: "scissors"
+        };
+        const num = Math.trunc(1 + Math.random() * (4 - 1));
+        return game[num];
+    };
+    const machine = randomElement();
+    switch (true) {
+        case human == "paper" && machine == "paper":
+            alert(`😍 Machine choose ${machine}, it's draw!`);
+            break;
+        case human == "rock" && machine == "rock":
+            alert(`Machine choose ${machine}, it's draw!`);
+            break;
+        case human == "scissors" && machine == "scissors":
+            alert(`Machine choose ${machine}, it's draw!`);
+            break;
+        case human == "paper" && machine == "scissors":
+            alert(`Machine choose ${machine}, you lost!`);
+            break;
+        case human == "scissors" && machine == "rock":
+            alert(`Machine choose ${machine}, you lost!`);
+            break;
+        case human == "rock" && machine == "paper":
+            alert(`Machine choose ${machine}, you lost!`);
+            break;
+        case human == "paper" && machine == "rock":
+            alert(`Machine choose ${machine}, you won!`);
+            break;
+        case human == "scissors" && machine == "paper":
+            alert(`Machine choose ${machine}, you won!`);
+            break;
+        case human == "rock" && machine == "scissors":
+            alert(`Machine choose ${machine}, you won!`);
+            break;
+        default:
+            alert(`Ooh, so sorry that you don't want to play`);
+    };
+} while (confirm ("Wanna play more?"));
+};
+</script>
+
+</body>
+</html> 
